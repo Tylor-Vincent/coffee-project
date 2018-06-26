@@ -1,0 +1,7 @@
+refactor tables to divs with headings displaying the coffee names, and type of roast in <p>s (vincent) DONE
+
+sort coffees by Ids in ascending order(tylor)
+
+search coffee by name (vincent)
+
+updates coffee list based on user's typed input.(Tylor)
