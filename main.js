@@ -43,10 +43,14 @@ function updateCoffees(e) {
 
     if (searchName.value === ""){
         rendDiv.innerHTML = renderCoffees(filteredCoffees);
-    }else {
+    } else {
         filteredCoffees.forEach(function (coffee, index) {
             if (coffee.name.toLowerCase().search(searchName.value.toLowerCase()) > -1) {
                 rendDiv.innerHTML = renderCoffee(coffee);
+                console.log(searchName.value);
+                console.log(index);
+            } else {
+                rendDiv.innerHTML = "<p>None</p>";
             }
         });
     }
