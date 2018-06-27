@@ -3,7 +3,7 @@
 }
 
 #wrapper {
-    background-image: url(pexels-photo.jpg);
+    background-image: url(coffee-beans.jpg);
     background-size: cover;
     color: white;
 }
@@ -21,9 +21,24 @@
     font-family: 'Permanent Marker', cursive;
     font-size: 50px;
 }
+
+#image-text {
+    font-size: 80px;
+}
+
 #map-canvas{
     height:400px;
 }
+
+.parallax {
+    background-image: url(coffee-people.jpeg);
+    min-height: 800px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .coffee {
     background-color: black;
     height: 100px;

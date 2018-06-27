@@ -2,7 +2,7 @@
     "use strict";
 
     var mapOptions = {
-        zoom: 13,
+        zoom: 12,
 
         center:{
             lat:48.4840955,
