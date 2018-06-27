@@ -20,6 +20,7 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
+    var searchedCoffees = [];
     if (selectedRoast === "all") {
         filteredCoffees = coffees;
     } else {
@@ -33,30 +34,14 @@ function updateCoffees(e) {
     if (searchName.value === ""){
         rendDiv.innerHTML = renderCoffees(filteredCoffees);
     } else {
-        filteredCoffees.forEach(function (coffee, index) {
+        filteredCoffees.forEach(function (coffee) {
             if (coffee.name.toLowerCase().search(searchName.value.toLowerCase()) > -1) {
-                rendDiv.innerHTML = renderCoffee(coffee);
-                console.log(searchName.value);
-                console.log(index);
-            } else {
-                rendDiv.innerHTML = "<p>None</p>";
+                searchedCoffees.push(coffee);
             }
         });
+        rendDiv.innerHTML = renderCoffees(searchedCoffees);
     }
-    // rendDiv.innerHTML = renderCoffees(filteredCoffees);
-    //
-    // var input, filter, i;
-    // input = document.getElementById('search-coffee');
-    // filter = input.value.toLowerCase();
-    //
-    // // Loop through all list items, and hide those who don't match the search query
-    // for (i = 0; i < coffees.length; i++) {
-    //     if (coffees[i].name.innerHTML.toLowerCase().indexOf(filter) > -1) {
-    //         coffees[i].name.style.display = "";
-    //     } else {
-    //         coffees[i].name.style.display = "none";
-    //     }
-    // }
+
 }
 
 function updateList(){
@@ -88,8 +73,8 @@ var coffees = [
 ];
 
 
-var newCoffeeName = document.getElementById('add-coffee-name');
-var newRoastName = document.getElementById('add-coffee-roast');
+var newCoffeeName = document.querySelector('#add-coffee-name');
+var newRoastName = document.querySelector('#add-coffee-roast');
 
 var searchName = document.querySelector('#search-coffee');
 
