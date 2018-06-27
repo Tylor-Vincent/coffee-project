@@ -17,7 +17,7 @@ function renderCoffees(coffees) {
 }
 
 function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+    // e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
     var searchedCoffees = [];
@@ -41,16 +41,19 @@ function updateCoffees(e) {
         });
         rendDiv.innerHTML = renderCoffees(searchedCoffees);
     }
-
 }
 
 function updateList(){
+    // e.preventDefault(); // don't submit the form, we just want to update the data
     var newCoffee = {
-        coffeeId: coffees.length + 1,
-        coffeeName: newCoffeeName.value,
-        coffeeRoast: newRoastName.value
+        id: coffees.length + 1,
+        name: newCoffeeName.value,
+        roast: newRoastName.value
     };
+    console.log(newCoffee);
     coffees.push(newCoffee);
+    console.log(coffees);
+    updateCoffees();
 }
 
 
