@@ -1,24 +1,13 @@
 "use strict";
 
-// var newCoffeeName = document.getElementById('add-coffee-name');
-// var newRoastName = document.getElementById('add-coffee-roast');
-var searchName = document.querySelector('#search-coffee');
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     html += '<h2>' + coffee.name + '</h2>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
-
     return html;
 }
-// function updateList(){
-//     var newCoffee = {
-//         coffeeId: coffees.length,
-//         coffeeName: newCoffeeName.value,
-//         coffeeRoast: newRoastName.value
-//     };
-//     coffees.push(newCoffee);
-// }
+
 function renderCoffees(coffees) {
     var html = '';
     for(var i = 0; i <= coffees.length - 1; i++) {
@@ -70,6 +59,15 @@ function updateCoffees(e) {
     // }
 }
 
+function updateList(){
+    var newCoffee = {
+        coffeeId: coffees.length + 1,
+        coffeeName: newCoffeeName.value,
+        coffeeRoast: newRoastName.value
+    };
+    coffees.push(newCoffee);
+}
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -90,13 +88,20 @@ var coffees = [
 ];
 
 
+var newCoffeeName = document.getElementById('add-coffee-name');
+var newRoastName = document.getElementById('add-coffee-roast');
+
+var searchName = document.querySelector('#search-coffee');
+
 var rendDiv = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit_search');
 var roastSelection = document.querySelector('#roast-selection');
-// var submitCoffee = document.querySelector('#submit_addCoffee');
+
+var submitCoffee = document.querySelector('#submit_addCoffee');
 
 rendDiv.innerHTML = renderCoffees(coffees);
-// submitCoffee.addEventListener('click',updateList);
-searchName.addEventListener('keyup',updateCoffees);
+searchName.addEventListener('keyup', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 submitButton.addEventListener('click', updateCoffees);
+
+submitCoffee.addEventListener('click', updateList);
