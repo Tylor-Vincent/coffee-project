@@ -32,7 +32,7 @@
 
 .parallax {
     background-image: url(coffee-people.jpeg);
-    min-height: 800px;
+    min-height: 600px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
