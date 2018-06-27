@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <body>
     <div class="row">
-        <div class="col-6">
+        <div class="col-9">
             <h1 id="companyName"><i class="fas fa-coffee pl-2 pt-2"></i> Voyageur's Coffee!</h1>
         </div>
-        <div class="col-6">
-
+        <div class="col-3 pt-4">
+            <a href="#map-canvas"><h5><i class="fas fa-map-marked-alt pr-2"></i>find location</h5></a>
         </div>
     </div>
     <div id="wrapper">
@@ -30,7 +30,7 @@
                     </select><br><br>
                     <label for="search-coffee"><strong>Coffee Name</strong></label><br>
                     <input type="text" id="search-coffee" class="w-100"><br><br>
-                    <input id="submit_search" type="submit" class="btn btn-light btn-lg btn-block"><br>
+                    <input id="submit_search" type="submit" class="btn btn-secondary btn-lg btn-block"><br>
                 </div>
 
                 <div class="col-5">
@@ -43,14 +43,43 @@
                     </select><br><br>
                     <label for="add-coffee-name"><strong>Name</strong></label><br>
                     <input type="text" id="add-coffee-name" class="w-100"><br><br>
-                    <input id="submit_addCoffee" type="submit" class="btn btn-light btn-lg btn-block">
+                    <input id="submit_addCoffee" type="submit" class="btn btn-secondary btn-lg btn-block">
                 </div>
             </div>
         </div>
         <div id="coffees" class="row justify-content-center pr-5 pl-5"></div>
 
     </div>
+    <div id="map-canvas"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIPbNd4ljI6NdSyP5ugk4XoKDzw2VEZM" async defer></script>
+    <script>
+        (function(){
+            "use strict";
 
+            var mapOptions = {
+                zoom: 13,
+
+                center:{
+                    lat:48.4840955,
+                    lng:-92.8270873
+                }
+            };
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            // var coffeeSpot = new google.maps.Geocoder();
+            // coffeeSpot.geocode({address:'360 MN-11, International Falls, MN 56649'},function(results,status){
+            //     if(status == google.maps.GeocoderStatus.OK){
+            //         map.setCenter(results[0].geometry.location);
+            //     }else{
+            //         alert('geocoding was not sucessful - STATUS'+status);
+            //     }
+            // });
+            //var marker = new google.maps.Marker({
+            //     postion:coffeeSpot,
+            //     map: map
+            // });
+        })();
+
+    </script>
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
