@@ -1,9 +1,29 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+*{
+    box-sizing: border-box;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+#wrapper {
+    background-image: url(pexels-photo.jpg);
+    background-size: cover;
+    color: white;
+}
+
+#coffees {
+    height: 410px;
+}
+
+#forms {
+    background-color: black;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#companyName {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 50px;
+}
+
+.coffee {
+    background-color: black;
+    height: 100px;
+    font-family: 'Bungee Inline', cursive;
 }

@@ -1,9 +1,9 @@
 "use strict";
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee">';
-    html += '<h2>' + coffee.name + '</h2>';
-    html += '<p>' + coffee.roast + '</p>';
+    var html = '<div class="col-2 m-2 coffee">';
+    html += '<h3>' + coffee.name + '</h3>';
+    html += '<p class="text-white-50">' + coffee.roast + '</p>';
     html += '</div>';
     return html;
 }
@@ -16,7 +16,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
-function updateCoffees(e) {
+function updateCoffees() {
     // e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
